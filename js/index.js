@@ -76,3 +76,6 @@ let contactSec = document.querySelectorAll('.contact h4, .contact p');
 for (let i = 0; i < contactSec.length; i++) {
   contactSec[i].textContent = contactToArray[i];
 }
+
+// add text content to the footer
+document.querySelector('footer p').textContent = siteContent.footer.copyright;
