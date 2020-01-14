@@ -55,3 +55,16 @@ sectionImg.src = siteContent.cta["img-src"];
 let ctaText = document.querySelector('.cta-text');
 ctaText.children[0].textContent = siteContent.cta.h1;
 ctaText.children[1].textContent = siteContent.cta.button;
+
+// add text content to the main-content
+let mainContent = document.querySelectorAll('.text-content h4, .text-content p');
+let middleImg = document.getElementById("middle-img");
+let dataToArray = Object.values(siteContent["main-content"]);
+let middleImgSrc = dataToArray.splice(4,1);
+
+// Update src attribute of the middle image
+middleImg.setAttribute('src', middleImgSrc);
+
+for (let i = 0; i < mainContent.length; i++) {
+  mainContent[i].textContent = dataToArray[i];
+}
