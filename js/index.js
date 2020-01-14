@@ -50,3 +50,8 @@ for (let i = 0; i < links.length; i++) {
 // Update the img src for section
 let sectionImg = document.getElementById("cta-img");
 sectionImg.src = siteContent.cta["img-src"];
+
+// add text content to the .cta-text children
+let ctaText = document.querySelector('.cta-text');
+ctaText.children[0].textContent = siteContent.cta.h1;
+ctaText.children[1].textContent = siteContent.cta.button;
