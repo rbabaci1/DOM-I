@@ -57,14 +57,22 @@ ctaText.children[0].textContent = siteContent.cta.h1;
 ctaText.children[1].textContent = siteContent.cta.button;
 
 // add text content to the main-content
-let mainContent = document.querySelectorAll('.text-content h4, .text-content p');
-let middleImg = document.getElementById("middle-img");
 let dataToArray = Object.values(siteContent["main-content"]);
 let middleImgSrc = dataToArray.splice(4,1);
+let mainContent = document.querySelectorAll('.text-content h4, .text-content p');
+let middleImg = document.getElementById("middle-img");
 
 // Update src attribute of the middle image
 middleImg.setAttribute('src', middleImgSrc);
 
 for (let i = 0; i < mainContent.length; i++) {
   mainContent[i].textContent = dataToArray[i];
+}
+
+// add text content to the contact section
+let contactToArray = Object.values(siteContent["contact"]);
+let contactSec = document.querySelectorAll('.contact h4, .contact p');
+
+for (let i = 0; i < contactSec.length; i++) {
+  contactSec[i].textContent = contactToArray[i];
 }
