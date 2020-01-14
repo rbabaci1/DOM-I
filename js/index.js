@@ -46,3 +46,7 @@ let links = document.querySelectorAll('a');
 for (let i = 0; i < links.length; i++) {
   links[i].textContent = siteContent["nav"]["nav-item-" + (i + 1)];
 }
+
+// Update the img src for section
+let sectionImg = document.getElementById("cta-img");
+sectionImg.src = siteContent.cta["img-src"];
