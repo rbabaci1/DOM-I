@@ -82,3 +82,17 @@ for (let i = 0; i < contactSec.length; i++) {
 
 // add text content to the footer
 document.querySelector('footer p').textContent = siteContent.footer.copyright;
+
+// append nodes to the navigation
+let nav = document.querySelector('nav');
+
+let login = document.createElement('a');
+login.textContent = "Login";
+login.style.color = 'green';
+
+let newIdeas = document.createElement('a');
+newIdeas.textContent = 'New ideas';
+newIdeas.style.color = 'green';
+
+nav.appendChild(login);
+nav.prepend(newIdeas);
