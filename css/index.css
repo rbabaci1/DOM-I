@@ -297,3 +297,17 @@ footer {
         margin: 20px;
     }
 }
+
+.links-style {
+    color: green;
+    cursor: pointer;
+    background: rgb(192, 209, 205);
+    padding: 10px 15px;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+.links-style:hover {
+    text-decoration: none;
+    background: #fff;
+    color: green;
+}
