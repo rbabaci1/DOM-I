@@ -6,7 +6,7 @@ let msOnes = document.getElementById('msTens');
 
 let clock = [secTens, secOnes, msTens, msOnes];
 
-function countUp() {
+function countUpSec() {
     let num = 0;
     clock.forEach(elm => elm.textContent = 0);
 
@@ -25,4 +25,4 @@ function countUp() {
     }, 1000);
 }
 
-countUp();
+countUpSec();

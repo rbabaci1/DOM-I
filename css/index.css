@@ -305,6 +305,7 @@ footer {
     padding: 10px 15px;
     margin: 0 2px;
     border-radius: 3px;
+    font-weight: bold;
 }
 .links-style:hover {
     text-decoration: none;

@@ -42,21 +42,20 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // add text content to the anchors
-let links = document.querySelectorAll('a');
+let links = document.getElementsByTagName('a');
 for (let i = 0; i < links.length; i++) {
   links[i].textContent = siteContent["nav"]["nav-item-" + (i + 1)];
-  links[i].style.color = "green";
 }
 
 // Update the img src for section
 let sectionImg = document.getElementById("cta-img");
 sectionImg.src = siteContent.cta["img-src"];
 
-// add text content to the .cta-text children
-let h1 = siteContent.cta.h1.split(' ').join('<br>');
+// add break lines to the heading
+let heading = siteContent.cta.h1.split(' ').join('<br>');
 
 let ctaText = document.querySelector('.cta-text');
-ctaText.children[0].innerHTML = h1;
+ctaText.children[0].innerHTML = heading;
 ctaText.children[1].textContent = siteContent.cta.button;
 
 // add text content to the main-content
@@ -84,21 +83,21 @@ for (let i = 0; i < contactSec.length; i++) {
 // add text content to the footer
 document.querySelector('footer p').textContent = siteContent.footer.copyright;
 
-// append nodes to the navigation
-let nav = document.querySelector('nav');
-
+// create two Element nodes
 let login = document.createElement('a');
 login.textContent = "Login";
-// login.style.color = 'green';
+login.href = "#";
 
-let newIdeas = document.createElement('a');
-newIdeas.textContent = 'New ideas';
-// newIdeas.style.color = 'green';
+let events = document.createElement('a');
+events.textContent = 'Events';
+events.setAttribute("href", "#");
 
-nav.appendChild(login);
-nav.prepend(newIdeas);
+// append and prepend the Elements
+links[0].parentNode.appendChild(login);
+login.parentNode.prepend(events);
 
-let allLinks = document.querySelectorAll('a');
-allLinks.forEach(elm => elm.className = 'links-style');
+// add style to all the nav items
+[].forEach.call(links, (el) => el.className = 'links-style');
+
 // Stretch
 document.body.style.backgroundImage = 'linear-gradient(280deg, #fff, #b9c6b9)';
