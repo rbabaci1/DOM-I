@@ -7,8 +7,9 @@ let msOnes = document.getElementById('msTens');
 let clock = [secTens, secOnes, msTens, msOnes];
 
 function countUp() {
-    clock.forEach(elm => elm.textContent = 0);
     let num = 0;
+    clock.forEach(elm => elm.textContent = 0);
+
     let time = setInterval(() => {
         num++;
         if (num >= 10) {
@@ -24,4 +25,4 @@ function countUp() {
     }, 1000);
 }
 
-// countUp();
+countUp();
