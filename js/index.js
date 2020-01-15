@@ -53,15 +53,16 @@ let sectionImg = document.getElementById("cta-img");
 sectionImg.src = siteContent.cta["img-src"];
 
 // add text content to the .cta-text children
-let splitH1 = siteContent.cta.h1.split(' ').join('<br>');
+let h1 = siteContent.cta.h1.split(' ').join('<br>');
 
 let ctaText = document.querySelector('.cta-text');
-ctaText.children[0].innerHtm = splitH1;
+ctaText.children[0].innerHTML = h1;
 ctaText.children[1].textContent = siteContent.cta.button;
 
 // add text content to the main-content
-let dataToArray = Object.values(siteContent["main-content"]);
-let middleImgSrc = dataToArray.splice(4,1);
+let mainContentValues = Object.values(siteContent["main-content"]);
+let middleImgSrc = mainContentValues.splice(4,1);
+
 let mainContent = document.querySelectorAll('.text-content h4, .text-content p');
 let middleImg = document.getElementById("middle-img");
 
@@ -69,15 +70,15 @@ let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', middleImgSrc);
 
 for (let i = 0; i < mainContent.length; i++) {
-  mainContent[i].textContent = dataToArray[i];
+  mainContent[i].textContent = mainContentValues[i];
 }
 
 // add text content to the contact section
-let contactToArray = Object.values(siteContent["contact"]);
+let contactValues = Object.values(siteContent["contact"]);
 let contactSec = document.querySelectorAll('.contact h4, .contact p');
 
 for (let i = 0; i < contactSec.length; i++) {
-  contactSec[i].textContent = contactToArray[i];
+  contactSec[i].textContent = contactValues[i];
 }
 
 // add text content to the footer
