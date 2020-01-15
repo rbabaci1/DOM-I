@@ -45,6 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let links = document.querySelectorAll('a');
 for (let i = 0; i < links.length; i++) {
   links[i].textContent = siteContent["nav"]["nav-item-" + (i + 1)];
+  links[i].style.color = "green";
 }
 
 // Update the img src for section
@@ -52,8 +53,10 @@ let sectionImg = document.getElementById("cta-img");
 sectionImg.src = siteContent.cta["img-src"];
 
 // add text content to the .cta-text children
+let splitH1 = siteContent.cta.h1.split(' ').join('<br>');
+
 let ctaText = document.querySelector('.cta-text');
-ctaText.children[0].textContent = siteContent.cta.h1;
+ctaText.children[0].innerHtm = splitH1;
 ctaText.children[1].textContent = siteContent.cta.button;
 
 // add text content to the main-content
