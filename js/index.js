@@ -89,11 +89,16 @@ let nav = document.querySelector('nav');
 
 let login = document.createElement('a');
 login.textContent = "Login";
-login.style.color = 'green';
+// login.style.color = 'green';
 
 let newIdeas = document.createElement('a');
 newIdeas.textContent = 'New ideas';
-newIdeas.style.color = 'green';
+// newIdeas.style.color = 'green';
 
 nav.appendChild(login);
 nav.prepend(newIdeas);
+
+let allLinks = document.querySelectorAll('a');
+allLinks.forEach(elm => elm.className = 'links-style');
+// Stretch
+document.body.style.backgroundImage = 'linear-gradient(280deg, #fff, #b9c6b9)';
