@@ -26,3 +26,13 @@ function countUpSec() {
 }
 
 // countUpSec();
+
+const buttons = document.getElementById('buttons');
+buttons.addEventListener('click', (event) => {
+    if (event.target.id == 'start') {
+        countUpSec();
+    } else {
+        countUpSec();
+        event.preventDefault();
+    }
+})

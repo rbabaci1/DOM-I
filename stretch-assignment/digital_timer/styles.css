@@ -1,7 +1,9 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 600px;
 }
 
 .digit {
@@ -11,4 +13,21 @@ body {
 
 .redDigit {
   color: red;
+}
+.btn {
+  margin: 30px 5px;
+  font-family: 'Monaco';
+  font-size: 25px;
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+.btn:hover {
+  background: rgb(5, 80, 150);
+  color: #fff;
+}
+
+#buttons {
+  display: flex;
 }
