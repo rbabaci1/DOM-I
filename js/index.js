@@ -45,7 +45,7 @@ logo.style.background = '#fff';
 // add text content to the anchors
 let links = document.getElementsByTagName('a');
 for (let i = 0; i < links.length; i++) {
-  links[i].textContent = siteContent["nav"]["nav-item-" + (i + 1)];
+  links[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
 }
 
 // Update the img src for section
@@ -105,15 +105,12 @@ document.body.className = 'body-bg-img';
 
 // add a dark mode button
 let button = document.createElement('button');
-button.innerHTML = 'Toggle dark mode';
+button.innerText = 'Toggle dark mode';
 button.className = 'btn';
 document.body.prepend(button);
 
-// function to trigger onclick
-function myFunc() {
+// add event listener
+button.addEventListener('click', () => {
   document.body.classList.toggle('drk-mode-btn');
   [].forEach.call(links, (el) => el.style.color = 'red');
-}
-
-// add event listener
-button.addEventListener('click', myFunc);
+});

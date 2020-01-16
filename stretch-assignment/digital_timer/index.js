@@ -25,4 +25,4 @@ function countUpSec() {
     }, 1000);
 }
 
-countUpSec();
+// countUpSec();
