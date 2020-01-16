@@ -109,8 +109,13 @@ button.innerText = 'Toggle dark mode';
 button.className = 'btn';
 document.body.prepend(button);
 
-// add event listener
+// add event listener with a handler function
 button.addEventListener('click', () => {
-  document.body.classList.toggle('drk-mode-btn');
-  [].forEach.call(links, (el) => el.style.color = 'red');
+  const container = document.querySelector('.container');
+  container.classList.toggle('drk-mode-btn');
+
+  logo.style.display = 'none';
+
+  const nav = document.getElementsByTagName('nav')[0];
+  nav.style.width = "100%";
 });
