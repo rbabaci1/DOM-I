@@ -40,6 +40,7 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
+logo.style.background = '#fff';
 
 // add text content to the anchors
 let links = document.getElementsByTagName('a');
@@ -100,4 +101,19 @@ login.parentNode.prepend(events);
 [].forEach.call(links, (el) => el.className = 'links-style');
 
 // Stretch
-document.body.style.backgroundImage = 'linear-gradient(280deg, #fff, #b9c6b9)';
+document.body.className = 'body-bg-img';
+
+// add a dark mode button
+let button = document.createElement('button');
+button.innerHTML = 'Toggle dark mode';
+button.className = 'btn';
+document.body.prepend(button);
+
+// function to trigger onclick
+function myFunc() {
+  document.body.classList.toggle('drk-mode-btn');
+  [].forEach.call(links, (el) => el.style.color = 'red');
+}
+
+// add event listener
+button.addEventListener('click', myFunc);
