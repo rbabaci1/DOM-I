@@ -111,10 +111,8 @@ document.body.prepend(button);
 
 // add event listener with a handler function
 button.addEventListener('click', () => {
-  const container = document.querySelector('.container');
-  container.classList.toggle('drk-mode-btn');
-
-  logo.style.display = 'none';
+  document.body.classList.toggle('drk-mode-btn');
+  logo.classList.toggle('hide');
 
   const nav = document.getElementsByTagName('nav')[0];
   nav.style.width = "100%";
